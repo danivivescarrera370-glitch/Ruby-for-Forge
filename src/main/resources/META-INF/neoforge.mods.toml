@@ -1,0 +1,26 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/danivivescarrera370-glitch/Ruby-for-Forge/issues"
+
+[[mods]]
+modId = "ruby_for_forge"
+version = "1.0.0"
+displayName = "Ruby for Forge"
+description = "(Neo)Forge module for Ruby, powered by JRuby. Write your Neoforge mods in Ruby!"
+authors = "Kaelux"
+logoFile = "assets/ruby-for-forge/icon.png"
+
+[[dependencies.ruby-for-forge]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.3,26.4)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.ruby-for-forge]]
+modId = "neoforge"
+type = "required"
+versionRange = "*"
+ordering = "NONE"
+side = "BOTH"
