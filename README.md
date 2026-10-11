@@ -7,7 +7,7 @@
 
 
 
-## Made by Bownlux, A developer of RevivalSMP.net
+## Made by Unofficial Port Studio, An unofficial port
 
 > **A note on updates:** big updates to this project will not come often, since most of my time
 > goes into [RevivalSMP.net](https://revivalsmp.net) and Retromod. Expect smaller maintenance
@@ -15,11 +15,11 @@
 > features. Issues and pull requests are still welcome.
 
 Write Fabric mods in **Ruby**! This is a [Fabric](https://fabricmc.net/) language module, the Ruby
-equivalent of [fabric-language-kotlin](https://github.com/FabricMC/fabric-language-kotlin). It is
+equivalent of [Koltin for Forge](https://github.com/thedarkcolour/KotlinForForge). It is
 powered by an embedded [JRuby](https://www.jruby.org/) runtime that ships inside the mod jar
 together with the full Ruby standard library.
 
-Your mod's `fabric.mod.json` points an entrypoint at a `.rb` script, and this mod does the rest:
+Your mod's `neoforge.mods.toml` points an entrypoint at a `.rb` script, and this mod does the rest:
 it boots JRuby (lazily, only when a Ruby entrypoint is actually needed), evaluates your script, and
 hands the resulting Ruby object to Fabric Loader as a regular entrypoint. Ruby method names map to
 Java automatically, so `def on_initialize` implements `ModInitializer#onInitialize`.
@@ -45,24 +45,19 @@ MyRubyMod
 Every Minecraft version Fabric supports, back to the very first (1.14). Two files are published per
 release. Install the one matching your Minecraft version:
 
-| File | Minecraft | Java | Bundled runtime |
-| --- | --- | --- | --- |
-| `fabric-language-ruby-<v>+jruby.10.x.jar` | **1.20.5 and newer** (incl. 26.x) | 21+ | JRuby 10.0 (Ruby 3.4) |
-| `fabric-language-ruby-<v>+jruby.9.4.x.jar` | **1.14-1.20.4** | 8+ | JRuby 9.4 (Ruby 3.1) |
-
-Both are the same mod (`fabric-language-ruby`, same features, same adapter); they differ only in the
+Both are the same mod (`ruby-for-forge`, same features, same adapter); they differ only in the
 bundled JRuby, because JRuby 10 needs Java 21 while older Minecraft runs on Java 8-17. Modrinth
 serves the right file for your game version automatically. Fabric Loader 0.16.0+ is required.
 
 Fabric Language Ruby is fully compatible with
-[fabric-language-kotlin](https://github.com/FabricMC/fabric-language-kotlin): both language modules
+[kotlin-for-forge](https://github.com/thedarkcolour/KotlinForForge): both language modules
 can be installed at the same time, so Ruby mods run alongside Kotlin mods in one modpack. This is
 verified in testing by running both adapters plus a Kotlin-written mod (Ledger) on one server.
 
 ## For players
 
 If a mod you installed needs this library, download the file matching your Minecraft version from
-Modrinth (or the [GitHub releases](https://github.com/Bownlux/Fabric-language-Ruby/releases)) and drop
+Modrinth (or the [GitHub releases](https://github.com/danivivescarrera370-glitch/Ruby-for-forge/releases)) and drop
 it into your `mods/` folder, next to the mod that needs it. There is no configuration.
 
 ## For mod developers
