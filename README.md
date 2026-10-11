@@ -1,7 +1,7 @@
 <div align="center">
   <img src="assets/logo.svg" alt="Fabric Language Ruby" width="480">
 
-[![Build](https://github.com/Bownlux/Fabric-language-Ruby/actions/workflows/build.yml/badge.svg)](https://github.com/Bownlux/Fabric-language-Ruby/actions/workflows/build.yml)
+[![Build](https://github.com/Bownlux/Fabric-language-Ruby/actions/workflows/build.yml/badge.png)](https://github.com/Bownlux/Fabric-language-Ruby/actions/workflows/build.yml)
 </div>
 
 
