@@ -1,4 +1,4 @@
-MIT License
+# MT License
 
 Copyright (c) 2026 Bownlux
 

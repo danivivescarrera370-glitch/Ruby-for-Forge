@@ -1,11 +1,9 @@
-<div align="center">
-  <img src="assets/logo.svg" alt="Fabric Language Ruby" width="480">
+# Fabric Language Ruby
+
+![Fabric Language Ruby](assets/logo.png)
 
 [![Build](https://github.com/Bownlux/Fabric-language-Ruby/actions/workflows/build.yml/badge.svg)](https://github.com/Bownlux/Fabric-language-Ruby/actions/workflows/build.yml)
 </div>
-
-
-
 
 ## Made by Bownlux, A developer of RevivalSMP.net
 
@@ -72,24 +70,37 @@ it into your `mods/` folder, next to the mod that needs it. There is no configur
 Add the `ruby` adapter to your entrypoints in `fabric.mod.json`, point the value at a Ruby script
 inside your mod jar, and depend on `fabric-language-ruby`:
 
-```json
-{
-	"schemaVersion": 1,
-	"id": "my-ruby-mod",
-	"version": "1.0.0",
-	"entrypoints": {
-		"main": [
-			{
-				"adapter": "ruby",
-				"value": "my_ruby_mod/main.rb"
-			}
-		]
-	},
-	"depends": {
-		"fabricloader": ">=0.16.0",
-		"fabric-language-ruby": ">=1.0.0"
-	}
-}
+```toml
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "my-ruby-mod"
+version = "1.0.0"
+displayName = "My Ruby Mod"
+entrypoint = "my_ruby_mod.Main"
+[[dependencies.my-ruby-mod]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.2,26.3)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.my-ruby-mod]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.2,26.3)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.my-ruby-mod]]
+modId = "ruby-for-forge"
+type = "required"
+versionRange = "*"
+ordering = "NONE"
+side = "BOTH"
+
 ```
 
 `my_ruby_mod/main.rb` lives in your mod's **resources** (so it ends up at that path inside your
@@ -278,7 +289,6 @@ Each build runs the unit test suite against that variant's JRuby and also produc
 example-mod jar (`*-testmod.jar`). JRuby is bundled jar-in-jar (`org.jruby:jruby-core` +
 `org.jruby:jruby-stdlib`); Fabric Loader deduplicates nested jars by version if several installed
 mods ship JRuby.
-
 
 ## Versioning
 
